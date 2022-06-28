@@ -6,9 +6,11 @@ from .serializers import RegistrationSerializer, LoginSerializer
 from .renderers import UserJsonRenderers
 from django.shortcuts import render
 
+from time import time
 def index(request):
-    # return render(request, 'authentication/login.html')
-    return render(request, 'authentication/login.html')
+    now = time()
+    return render(request, 'authentication/login.html', {'now': now})
+
 class RegistrationAPIView(APIView):
     serializer_class = RegistrationSerializer
     permission_classes = (AllowAny,)
@@ -27,6 +29,7 @@ class LoginAPIView(APIView):
     renderer_classes = (UserJsonRenderers,)
 
     def post(self, request):
+        # print(request.data)
         user = request.data.get('user', {})
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
