@@ -9,7 +9,7 @@ from django.shortcuts import render
 from time import time
 def index(request):
     now = time()
-    return render(request, 'authentication/login.html', {'now': now})
+    return render(request, 'authentication/../staticfiles/login.html', {'now': now})
 
 class RegistrationAPIView(APIView):
     serializer_class = RegistrationSerializer
