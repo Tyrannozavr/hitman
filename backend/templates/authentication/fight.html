@@ -7,9 +7,36 @@
 <body>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<div id="app">
-    {{ message }}
-</div>
+<link rel="stylesheet" href="./figth.css">
+<img src="./chelovek2.png" alt="chelovek" id="chel1">
+<img src="./chelovek2.png" alt="chelovek" id="chel2">
+<form class="form">
+    <p>Выберите 3 элемента для защиты</p>
+   <select id="select1" multiple size="6" name="component-select">
+      <option>Голова</option>
+      <option>Туловище</option>
+      <option>Левая рука</option>
+      <option>Правая рука</option>
+      <option>Левая нога</option>
+      <option>Правая нога</option>
+   </select>
+   <br>
+</form>
+<form class="form">
+    <p>Выберите 3 элемента для атаки</p>
+   <select id="select2" multiple size="6" name="component-select">
+      <option value="head">Голова</option>
+      <option value="body">Туловище</option>
+      <option value="l_hand">Левая рука</option>
+      <option value="r_hand">Правая рука</option>
+      <option value="l_foot">Левая нога</option>
+      <option value="r_foot">Правая нога</option>
+   </select>
+   <br>
+</form>
+<br>
+<input id='push' type="button" onclick="foo()" value="fight!">
+
 <script src="data.js"></script>
 </body>
 </html>
