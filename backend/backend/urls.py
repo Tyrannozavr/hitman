@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import fight
+# from .views import fight
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('authentication.urls', namespace='authentication')),
-    path('fight/', fight, name=fight)
+    path('fight/', include('fight.urls', namespace='fight')),
 ]

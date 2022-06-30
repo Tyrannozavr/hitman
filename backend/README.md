@@ -21,3 +21,5 @@
 Frontend - Vue, для общения с сервером - axios. Для верстки можешь использовать bootstrap/vue-bootstrap, но это по желанию.
 
 Все построено на REST API, со стороны джанго темплейтов не должно быть вообще.
+
+https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-20-04

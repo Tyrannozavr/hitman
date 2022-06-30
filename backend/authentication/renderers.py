@@ -14,8 +14,3 @@ class UserJsonRenderers(JSONRenderer):
             'user': data
         })
 
-class TestRenderer(JSONRenderer):
-    charset = 'utf-8'
-    def render(self, data, accepted_media_type=None, renderer_context=None):
-        print('render', data)
-        return json.dumps({'answer': 'good'})

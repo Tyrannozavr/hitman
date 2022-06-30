@@ -3,7 +3,8 @@ function foo() {
     attack = check_length(x, 'атаки');
     // console.log(attack);
     if (attack == true) {
-        console.log('attack');
+        console.log(this.attack);
+        fight(this.defend, this.attack);
     }
 };
 function check_length(array, str) {
@@ -22,6 +23,9 @@ function check_length(array, str) {
     }};
 }
 
-function figth(protect, attack) {
-    axios.post('http://127.0.0.1:8000/api')
+function fight(protect, attack) {
+    axios.post('http://127.0.0.1:8000/fight/', {
+        defend: [1,2,3],
+        attack: [1,2,3],
+    })
 }
