@@ -12,6 +12,8 @@ class FightView(APIView):
 
     def post(self, request):
         print(request.data, request.user)
+        a = request.data.get('defend')
+        # print(a['0'])
         serializer = self.serializer_class(request.data)
         # serializer.is_valid(raise_exception=True)
         # serializer.save()

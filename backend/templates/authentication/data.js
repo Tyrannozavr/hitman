@@ -1,11 +1,29 @@
-function foo() {
-    var x = document.getElementById('select2').options;
-    attack = check_length(x, 'атаки');
-    // console.log(attack);
-    if (attack == true) {
-        console.log(this.attack);
-        fight(this.defend, this.attack);
+function transform(array) {
+    answer = []
+    // console.log(array.lenght);
+    for (var i = 0; i < 6; i++) {
+        // console.log(array[i]);
+        if (array[i].selected === true) {
+            answer.push(i)
+        }
     }
+    // console.log(answer);
+    return answer
+}
+
+
+function foo() {
+    var attack = document.getElementById('select2').options;
+    var defend = document.getElementById('select1').options;
+    var x = document.getElementById('select2');
+    // console.log(x.options[0].selected);
+    transform(x.options)
+    attack_val = check_length(attack, 'атаки');
+    defend_val = check_length(defend, 'защиты')
+    if (attack_val === true) { if (defend_val === true) {
+        // console.log(attack, defend);
+        fight(transform(defend), transform(attack));
+    }}
 };
 function check_length(array, str) {
     var l = array.length;
@@ -23,9 +41,10 @@ function check_length(array, str) {
     }};
 }
 
-function fight(protect, attack) {
+function fight(defend, attack) {
     axios.post('http://127.0.0.1:8000/fight/', {
-        defend: [1,2,3],
-        attack: [1,2,3],
+        defend: defend,
+        // defend: [1,2,3],
+        attack: attack,
     })
 }
