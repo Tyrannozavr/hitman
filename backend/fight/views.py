@@ -17,6 +17,8 @@ class FightView(APIView):
         data['user'] = request.user.pk
         # data['attack'] = [1, 2, 3]
         # data['defend'] = [1, 2, 3]
+        # data['attack'] = '[1,2,3]'
+        # data['defend'] = '[1,2,3]'
         print('attack', data.get('attack'), type(data.get('attack')))
         # print(data)
         # print(request.data)
