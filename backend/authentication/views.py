@@ -27,7 +27,7 @@ class LoginAPIView(APIView):
         # print(request.data)
         user = request.data.get('user', {})
         serializer = self.serializer_class(data=user)
-        serializer.is_valid(raise_exception=True)
+        # serializer.is_valid(raise_exception=True)
         # print(serializer.data)
         serializer.is_valid(raise_exception=True)
         return Response(serializer.data, status.HTTP_200_OK)
