@@ -11,9 +11,8 @@ class FightView(APIView):
     permission_classes = (AllowAny,)
 
     def post(self, request):
-        print(request.data, request.user)
+        print(request.data, request.user, request.headers)
         a = request.data.get('defend')
-        # print(a['0'])
         serializer = self.serializer_class(request.data)
         # serializer.is_valid(raise_exception=True)
         # serializer.save()

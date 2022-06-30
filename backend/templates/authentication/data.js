@@ -1,13 +1,10 @@
 function transform(array) {
     answer = []
-    // console.log(array.lenght);
     for (var i = 0; i < 6; i++) {
-        // console.log(array[i]);
         if (array[i].selected === true) {
             answer.push(i)
         }
     }
-    // console.log(answer);
     return answer
 }
 
@@ -16,12 +13,10 @@ function foo() {
     var attack = document.getElementById('select2').options;
     var defend = document.getElementById('select1').options;
     var x = document.getElementById('select2');
-    // console.log(x.options[0].selected);
     transform(x.options)
     attack_val = check_length(attack, 'атаки');
     defend_val = check_length(defend, 'защиты')
     if (attack_val === true) { if (defend_val === true) {
-        // console.log(attack, defend);
         fight(transform(defend), transform(attack));
     }}
 };
@@ -44,7 +39,11 @@ function check_length(array, str) {
 function fight(defend, attack) {
     axios.post('http://127.0.0.1:8000/fight/', {
         defend: defend,
-        // defend: [1,2,3],
         attack: attack,
-    })
+        // headers: {
+        //     Authorization: 'Token '+sessionStorage.getItem('token')
+        // }
+    }, {headers: {
+        Authorization: `Token ${sessionStorage.getItem('token')}`
+        }})
 }
