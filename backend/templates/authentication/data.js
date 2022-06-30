@@ -42,5 +42,9 @@ function fight(defend, attack) {
         attack: attack,
     }, {headers: {
         Authorization: `Token ${sessionStorage.getItem('token')}`
-        }})
+        }}).then( function(response) {
+            axios.post('http://127.0.0.1:8000/fight/statistic/', {
+                hello: 'Hello'
+            })
+    })
 }

@@ -18,3 +18,10 @@ class Fight(models.Model):
     defend = ArrayField(
         models.CharField(max_length=40, choices=choice), size=3
     )
+    finished = models.BooleanField(default=False)
+
+class Statistic(models.Model):
+    num_round = models.AutoField(primary_key=True)
+    first_player = models.OneToOneField(Fight, on_delete=models.CASCADE, related_name='first')
+    second_player = models.OneToOneField(Fight, on_delete=models.CASCADE, related_name='second')
+
