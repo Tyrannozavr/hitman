@@ -40,9 +40,6 @@ function fight(defend, attack) {
     axios.post('http://127.0.0.1:8000/fight/', {
         defend: defend,
         attack: attack,
-        // headers: {
-        //     Authorization: 'Token '+sessionStorage.getItem('token')
-        // }
     }, {headers: {
         Authorization: `Token ${sessionStorage.getItem('token')}`
         }})
