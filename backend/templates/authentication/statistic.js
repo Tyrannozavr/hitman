@@ -6,7 +6,7 @@ axios.get('http://127.0.0.1:8000/fight/statistic/', {
       var app = new Vue({
           el: '#app',
           data: {
-              todos: response.data
+              rounds: response.data
           }
       })
   })

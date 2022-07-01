@@ -20,7 +20,7 @@ class StatisticView(viewsets.ModelViewSet):
         for i in players:
             i.finished = True
             i.save()
-        num = Statistic.objects.last().num_round + 1 if len(Statistic.objects.all() )> 0 else 1
+        num = Statistic.objects.last().num_round + 1 if len(Statistic.objects.all()) > 0 else 1
         return Statistic.objects.create(num_round=num, first_player=players[0], second_player=players[1])
 
 
@@ -30,16 +30,19 @@ class FightView(APIView):
 
     def post(self, request):
         if len(Fight.objects.all()) > 0 and request.user == Fight.objects.last().user:
+            print('wait')
             return Response(data=json.dumps({
                 'message': 'please wait'
             }), status=status.HTTP_306_RESERVED)
-
+        # print(request.data)
         data = request.data
-        data['user'] = request.user.pk
+        data['user'] = request.user.username
+        # print('user', data['user'])
+        # print('vuew', data)
         serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        print(StatisticView.post(1, 2))
+        print('crated', StatisticView.post(1, 2))   #it is required for created statistic, not simple print
         return Response(data=json.dumps({
             'created': 'true'
         }), status=status.HTTP_306_RESERVED)

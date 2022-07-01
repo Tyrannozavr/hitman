@@ -9,8 +9,10 @@
 <body>
 <div id="app">
   <ol>
-    <li v-for="todo in todos">
-      {{ todo.num_round }}
+    <li v-for="round in rounds">
+        <h2>Round N {{ round.num_round }}</h2>
+        <h3>Player 1: {{ round.first_player.user }}</h3>
+      {{ round.num_round }}, {{ round.first_player }}
     </li>
   </ol>
 </div>
