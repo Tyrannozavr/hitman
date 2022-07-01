@@ -12,13 +12,6 @@ class StatisticView(viewsets.ModelViewSet):
     serializer_class = StatisticSerializer
     permission_classes = (AllowAny,)
     queryset = Statistic.objects.all()
-    # def get(self, request):
-    #     print('statistic')
-    #     data = list(Statistic.objects.all())
-    #     print(data)
-    #     serializer = self.serializer_class(data=data, many=True)
-    #     serializer.is_valid(raise_exception=True)
-    #     return Response(data=serializer.data)
 
     def post(self, request):
         players = Fight.objects.filter(finished=False)[:2]
@@ -37,9 +30,6 @@ class FightView(APIView):
 
     def post(self, request):
         if len(Fight.objects.all()) > 0 and request.user == Fight.objects.last().user:
-            # print('post', request.user, Fight.objects.last().user)
-            # print('please wait')
-            # print(StatisticView.post(1, 2))
             return Response(data=json.dumps({
                 'message': 'please wait'
             }), status=status.HTTP_306_RESERVED)
@@ -49,7 +39,7 @@ class FightView(APIView):
         serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        # print('created')
+        print(StatisticView.post(1, 2))
         return Response(data=json.dumps({
             'created': 'true'
         }), status=status.HTTP_306_RESERVED)
