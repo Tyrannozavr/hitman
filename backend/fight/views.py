@@ -36,8 +36,10 @@ class FightView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def post(self, request):
-        if request.user == Fight.objects.last().user:
-            print(StatisticView.post(1, 2))
+        if len(Fight.objects.all()) > 0 and request.user == Fight.objects.last().user:
+            # print('post', request.user, Fight.objects.last().user)
+            # print('please wait')
+            # print(StatisticView.post(1, 2))
             return Response(data=json.dumps({
                 'message': 'please wait'
             }), status=status.HTTP_306_RESERVED)
@@ -47,11 +49,10 @@ class FightView(APIView):
         serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        print(StatisticView.post(1, 2))
-        print('created', request.user)
+        # print('created')
         return Response(data=json.dumps({
             'created': 'true'
-        }), status=status.HTTP_200_OK)
+        }), status=status.HTTP_306_RESERVED)
 
 
 

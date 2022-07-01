@@ -1,9 +1,7 @@
 from rest_framework import serializers
-from .models import Fight, Statistic
+from .models import Fight, Statistic, User
 
 class FightSerializers(serializers.ModelSerializer):
-    # user = serializers.IntegerField(max_value=255)
-    user = serializers.PrimaryKeyRelatedField(read_only=True)
     attack = serializers.ListField(default=[])
     defend = serializers.ListField(default=[])
 
@@ -12,10 +10,13 @@ class FightSerializers(serializers.ModelSerializer):
         fields = '__all__'
 
     def create(self, validated_data):
+        print('create')
         user = validated_data.get('user')
         attack = validated_data.get('attack')
         defend = validated_data.get('defend')
-        return Fight.objects.create(user_id=user, attack=attack, defend=defend)
+        print(2, validated_data)
+        print(user, attack, defend)
+        return Fight.objects.create(user=user, attack=attack, defend=defend)
 
 class StatisticSerializer(serializers.ModelSerializer):
     queryset = Statistic.objects.all()
@@ -25,4 +26,3 @@ class StatisticSerializer(serializers.ModelSerializer):
     class Meta:
         model = Statistic
         fields = '__all__'
-        # fields = ['num_round', 'first_player_attack']
