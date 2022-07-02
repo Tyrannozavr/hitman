@@ -11,8 +11,13 @@
   <ol>
     <li v-for="round in rounds">
         <h2>Round N {{ round.num_round }}</h2>
-        <h3>Player 1: {{ round.first_player.user }}</h3>
-      {{ round.num_round }}, {{ round.first_player }}
+        <h3>Player {{ round.first_player.user }} VS Player {{ round.second_player.user }}</h3>
+        <p>Player {{ round.first_player.user }} attack the: {{ round.first_player.attack }}____________________________
+            Player {{ round.second_player.user }} attack the: {{ round.second_player.attack }}
+        </p>
+        <p>Player {{ round.first_player.user }} defend the: {{ round.first_player.defend }}____________________________
+            Player {{ round.second_player.user }} defend the: {{ round.second_player.defend }}
+        </p>
     </li>
   </ol>
 </div>
