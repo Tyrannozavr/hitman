@@ -8,7 +8,6 @@ function transform(array) {
     return answer
 }
 
-
 function foo() {
     var attack = document.getElementById('select2').options;
     var defend = document.getElementById('select1').options;
@@ -20,12 +19,13 @@ function foo() {
         fight(transform(defend), transform(attack));
     }}
 };
+
 function check_length(array, str) {
     var l = array.length;
     var num_selected = 0;
 
     for (var i = 0; i < l; i++) {
-        if (array[i].selected == true) {
+        if (array[i].selected === true) {
             num_selected++;
         };
     };
@@ -44,3 +44,13 @@ function fight(defend, attack) {
         Authorization: `Token ${sessionStorage.getItem('token')}`
         }})
 }
+
+function authenticate() {
+        axios.post('http://127.0.0.1:8000/api/', {
+    }, {headers: {
+        Authorization: `Token ${sessionStorage.getItem('token')}`
+        }}).then( function(response) {
+            console.log(response);
+        } )
+}
+// http://127.0.0.1:8000/api/
