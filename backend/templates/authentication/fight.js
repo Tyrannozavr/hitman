@@ -42,47 +42,35 @@ function fight(defend, attack) {
         attack: attack,
     }, {headers: {
         Authorization: `Token ${sessionStorage.getItem('token')}`
-        }})
+        }}).catch( function (err) {
+            alert('You must log in');
+    })
 }
 
 function test() {
     return true
 }
 
+var answer = null
 function authenticate_f() {
-    var answer = null
     axios.post('http://127.0.0.1:8000/api/', {
   }, {headers: {
         Authorization: `Token ${sessionStorage.getItem('token')}`
         }})
   .then(function (response) {
-      // console.log('true');
-      answer = true;}).catch( function() {
+       answer = true;}).catch( function() {
           console.log('error')
-        answer = false;
+         answer = false;
     })
     console.log('aa', answer);
     return answer
 }
 
-var app1 = new Vue({
-    el: '#app-1',
-    data: {
-        message: 'Hello, Vue',
-        authenticate: authenticate_f(),
-    }
-//     methods: {
-//         authenticate_f: function() {
-//     axios.post('http://127.0.0.1:8000/api/', {
-//   }, {headers: {
-//         Authorization: `Token ${sessionStorage.getItem('token')}`
-//         }})
-//   .then(function (response) {
-//       console.log('truee');
-//       return false;
-//   })
-// }
-//     }
-})
-
-// http://127.0.0.1:8000/api/
+// var app1 = new Vue({
+//     el: '#app-1',
+//     data: {
+//         message: 'Hello, Vue',
+//         // authenticate: authenticate_f(),
+//         authenticate: true,
+//     }})
+// authenticate_f();
