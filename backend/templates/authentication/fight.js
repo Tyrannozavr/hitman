@@ -43,34 +43,10 @@ function fight(defend, attack) {
     }, {headers: {
         Authorization: `Token ${sessionStorage.getItem('token')}`
         }}).catch( function (err) {
-            alert('You must log in');
+            if (err.response.data === 'please wait') {
+                alert('Please wait step second user')
+            } else {
+                alert('You must log in')
+            }
     })
 }
-
-function test() {
-    return true
-}
-
-var answer = null
-function authenticate_f() {
-    axios.post('http://127.0.0.1:8000/api/', {
-  }, {headers: {
-        Authorization: `Token ${sessionStorage.getItem('token')}`
-        }})
-  .then(function (response) {
-       answer = true;}).catch( function() {
-          console.log('error')
-         answer = false;
-    })
-    console.log('aa', answer);
-    return answer
-}
-
-// var app1 = new Vue({
-//     el: '#app-1',
-//     data: {
-//         message: 'Hello, Vue',
-//         // authenticate: authenticate_f(),
-//         authenticate: true,
-//     }})
-// authenticate_f();

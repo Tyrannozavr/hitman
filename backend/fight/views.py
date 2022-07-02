@@ -42,11 +42,11 @@ class FightView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def post(self, request):
-        if len(Fight.objects.all()) > 0 and request.user == Fight.objects.last().user:
-            print('wait')
-            return Response(data=json.dumps({
-                'message': 'please wait'
-            }), status=status.HTTP_306_RESERVED)
+        if len(Fight.objects.all()) > 0 and request.user == Fight.objects.last().user and not Fight.objects.last().finished:
+            return Response(data='please wait', status=status.HTTP_306_RESERVED)
+            # return Response(data=json.dumps({
+            #     'message': 'please wait'
+            # }), status=status.HTTP_306_RESERVED)
         data = request.data
         data['user'] = request.user.username
         serializer = self.serializer_class(data=data)
@@ -55,7 +55,7 @@ class FightView(APIView):
         print('crated', StatisticView.post(1, 2))   #it is required for created statistic, not simple print
         return Response(data=json.dumps({
             'created': 'true'
-        }), status=status.HTTP_306_RESERVED)
+        }), status=status.HTTP_201_CREATED)
 
 
 

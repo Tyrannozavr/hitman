@@ -10,10 +10,9 @@ class Authenticate(APIView):
     permission_classes = (AllowAny,)
 
     def post(self, request):
-        # print(request.user)
         if request.user.is_authenticated:
             return Response(json.dumps({
-                'user': 'authenticate'
+                'user': request.user.username
             }), status.HTTP_200_OK)
         else:
             Response(json.dumps({
