@@ -9,15 +9,18 @@
 <body>
 <div id="app">
   <ol>
-    <li v-for="round in rounds">
+    <li v-for="round in rounds" style="text-align: center">
         <h2>Round N {{ round.num_round }}</h2>
         <h3>Player {{ round.first_player.user }} VS Player {{ round.second_player.user }}</h3>
-        <p>Player {{ round.first_player.user }} attack the: {{ round.first_player.attack }}____________________________
+        <p>Player {{ round.first_player.user }} attack the: {{ round.first_player.attack }}____________________________________________________________________________________________________________
             Player {{ round.second_player.user }} attack the: {{ round.second_player.attack }}
         </p>
-        <p>Player {{ round.first_player.user }} defend the: {{ round.first_player.defend }}____________________________
+        <p>Player {{ round.first_player.user }} defend the: {{ round.first_player.defend }}____________________________________________________________________________________________________________
             Player {{ round.second_player.user }} defend the: {{ round.second_player.defend }}
         </p>
+        <h3> {{ round.winner }} </h3>
+        <p>Player {{ round.first_player.user }}: {{ round.first_player_score }} score_____________________________________________________________________________________________________________________________
+            Player {{ round.second_player.user }}: {{ round.second_player_score }} score</p>
     </li>
   </ol>
 </div>

@@ -24,4 +24,6 @@ class Statistic(models.Model):
     num_round = models.AutoField(primary_key=True)
     first_player = models.OneToOneField(Fight, on_delete=models.CASCADE, related_name='first')
     second_player = models.OneToOneField(Fight, on_delete=models.CASCADE, related_name='second')
+    first_player_score = models.IntegerField(default=0)
+    second_player_score = models.IntegerField(default=0)
 

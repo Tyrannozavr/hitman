@@ -12,7 +12,16 @@ function part_body (data) {
           data[i].first_player.defend = data[i].first_player.defend.join(', ');
           data[i].second_player.attack = data[i].second_player.attack.join(', ');
           data[i].second_player.defend = data[i].second_player.defend.join(', ');
-      };
+          if (data[i].first_player_score > data[i].second_player_score) {
+              data[i]['winner'] = `${data[i].first_player.user} Win!`;
+          } else {
+              if (data[i].first_player_score < data[i].second_player_score)
+              {data[i]['winner'] = `${data[i].second_player.user} Win!`;} else {
+                  data[i]['winner'] = 'Draw'
+              }
+          }
+
+      }
 }
 
 axios.get('http://127.0.0.1:8000/fight/statistic/', {

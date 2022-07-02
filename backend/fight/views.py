@@ -8,6 +8,16 @@ from rest_framework import viewsets
 from .models import Fight, Statistic
 from .serializers import FightSerializers, StatisticSerializer
 
+def score(user_one, user_two):
+    one_attack = user_one.attack
+    one_defend = user_one.defend
+    two_attack = user_two.attack
+    two_defend = user_two.defend
+    scores = {0: 3, 1: 2, 3: 1, 4: 1, 5: 1, 6: 1}
+    one_score = [scores[i] if i not in two_defend else 0 for i in one_attack]
+    two_score = [scores[i] if i not in one_defend else 0 for i in two_attack]
+    return one_score, two_score
+
 class StatisticView(viewsets.ModelViewSet):
     serializer_class = StatisticSerializer
     permission_classes = (AllowAny,)
@@ -17,6 +27,8 @@ class StatisticView(viewsets.ModelViewSet):
         players = Fight.objects.filter(finished=False)[:2]
         if len(players) < 2:
             return 'please wait'
+        one_score, two_score = score(players[0], players[1])
+        players[0].score, players[1].score = one_score, two_score
         for i in players:
             i.finished = True
             i.save()
@@ -34,11 +46,8 @@ class FightView(APIView):
             return Response(data=json.dumps({
                 'message': 'please wait'
             }), status=status.HTTP_306_RESERVED)
-        # print(request.data)
         data = request.data
         data['user'] = request.user.username
-        # print('user', data['user'])
-        # print('vuew', data)
         serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
