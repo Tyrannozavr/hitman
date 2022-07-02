@@ -21,7 +21,7 @@ def score(user_one, user_two):
 
 class StatisticView(viewsets.ModelViewSet):
     serializer_class = StatisticSerializer
-    permission_classes = (AllowAny,)
+    permission_classes = (IsAuthenticated,)
     queryset = Statistic.objects.all()
 
     def post(self, request):
