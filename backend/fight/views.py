@@ -44,9 +44,6 @@ class FightView(APIView):
     def post(self, request):
         if len(Fight.objects.all()) > 0 and request.user == Fight.objects.last().user and not Fight.objects.last().finished:
             return Response(data='please wait', status=status.HTTP_306_RESERVED)
-            # return Response(data=json.dumps({
-            #     'message': 'please wait'
-            # }), status=status.HTTP_306_RESERVED)
         data = request.data
         data['user'] = request.user.username
         serializer = self.serializer_class(data=data)
