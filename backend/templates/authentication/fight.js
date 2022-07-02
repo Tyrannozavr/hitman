@@ -45,12 +45,44 @@ function fight(defend, attack) {
         }})
 }
 
-function authenticate() {
-        axios.post('http://127.0.0.1:8000/api/', {
-    }, {headers: {
-        Authorization: `Token ${sessionStorage.getItem('token')}`
-        }}).then( function(response) {
-            console.log(response);
-        } )
+function test() {
+    return true
 }
+
+function authenticate_f() {
+    var answer = null
+    axios.post('http://127.0.0.1:8000/api/', {
+  }, {headers: {
+        Authorization: `Token ${sessionStorage.getItem('token')}`
+        }})
+  .then(function (response) {
+      // console.log('true');
+      answer = true;}).catch( function() {
+          console.log('error')
+        answer = false;
+    })
+    console.log('aa', answer);
+    return answer
+}
+
+var app1 = new Vue({
+    el: '#app-1',
+    data: {
+        message: 'Hello, Vue',
+        authenticate: authenticate_f(),
+    }
+//     methods: {
+//         authenticate_f: function() {
+//     axios.post('http://127.0.0.1:8000/api/', {
+//   }, {headers: {
+//         Authorization: `Token ${sessionStorage.getItem('token')}`
+//         }})
+//   .then(function (response) {
+//       console.log('truee');
+//       return false;
+//   })
+// }
+//     }
+})
+
 // http://127.0.0.1:8000/api/

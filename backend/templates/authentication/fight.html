@@ -8,10 +8,12 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <link rel="stylesheet" href="./figth.css">
+
+
+<div id="app-1" v-if="authenticate">
 <img src="./chelovek2.png" alt="chelovek" id="chel1">
 <img src="./chelovek2.png" alt="chelovek" id="chel2">
-
-<form class="form">
+    <form class="form">
     <p>Выберите 3 элемента для защиты</p>
    <select id="select1" multiple size="6" name="component-select">
       <option>Голова</option>
@@ -36,9 +38,7 @@
    <br>
 </form>
 <br>
-<input id='push' type="button" onclick="foo()" value="fight!">
-<div id="app-1">
-    <span v-if="authenticate()">Hello</span>
+    <input id='push' type="button" onclick="foo()" value="fight!">
 </div>
 <script src="fight.js"></script>
 </body>

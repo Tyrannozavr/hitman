@@ -7,12 +7,18 @@ from .renderers import UserJsonRenderers
 import json
 
 class Authenticate(APIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
 
     def post(self, request):
-        return Response(json.dumps({
-            'user': 'authenticate'
-        }), status.HTTP_200_OK)
+        # print(request.user)
+        if request.user.is_authenticated:
+            return Response(json.dumps({
+                'user': 'authenticate'
+            }), status.HTTP_200_OK)
+        else:
+            Response(json.dumps({
+                'error': 'error'
+            }), status=status.HTTP_400_BAD_REQUEST)
 
 class RegistrationAPIView(APIView):
     serializer_class = RegistrationSerializer

@@ -20,7 +20,6 @@ function part_body (data) {
                   data[i]['winner'] = 'Draw'
               }
           }
-
       }
 }
 
