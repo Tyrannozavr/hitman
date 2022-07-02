@@ -22,10 +22,20 @@ function part_body (data) {
           }
       }
 }
+// alert('hello');
+// axios.get('http://localhost:8000/fight/statistic/');
+// $.ajax({
+//     url: 'https://localhost:8080/fight/statistic/',
+//     // method: post,
+// })
 
-axios.get('http://127.0.0.1:8000/fight/statistic/', {
-  })
-  .then(function (response) {
+axios({
+  method: 'get',
+  url: 'http://127.0.0.1:8000/fight/statistic/',
+  headers: {
+    Authorization: `Token ${sessionStorage.getItem('token')}`
+  }
+})  .then(function (response) {
       var data = response.data;
       part_body(data);
       var app = new Vue({
@@ -45,3 +55,29 @@ axios.get('http://127.0.0.1:8000/fight/statistic/', {
       })
     console.log(error);
   });
+
+
+// axios.get('http://127.0.0.1:8000/fight/statistic/', {
+//   }, {headers: {
+//       Authorization: `Token ${sessionStorage.getItem('token')}`
+//     }})
+//   .then(function (response) {
+//       var data = response.data;
+//       part_body(data);
+//       var app = new Vue({
+//           el: '#app',
+//           data: {
+//               rounds: data
+//           }
+//       })
+//   })
+//   .catch(function (error) {
+//       // alert('You must log in ');
+//             var app = new Vue({
+//           el: '#app',
+//           data: {
+//               rounds: null
+//           }
+//       })
+//     console.log(error);
+//   })

@@ -7,7 +7,11 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
+
 <div id="app">
+    <div v-if="rounds === null">
+        You must <a href="./login.html">log in</a>
+    </div>
   <ol>
     <li v-for="round in rounds" style="text-align: center">
         <h2>Round N {{ round.num_round }}</h2>
