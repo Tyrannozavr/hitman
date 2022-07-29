@@ -1,5 +1,16 @@
+import './figth.css'
+import image from './chelovek2.png'
+
+export default {
+    data: function() {
+        return {
+            imag: image
+        }
+    }
+};
+
 function transform(array) {
-    answer = []
+    var answer = []
     for (var i = 0; i < 6; i++) {
         if (array[i].selected === true) {
             answer.push(i)
