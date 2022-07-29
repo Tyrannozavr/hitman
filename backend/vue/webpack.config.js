@@ -12,6 +12,7 @@ module.exports = {
     entry: {
         main: path.resolve(__dirname, './src/index.js'),
         add: path.resolve(__dirname, './src/fight.js'),
+        third: path.resolve(__dirname, './src/statistic.js'),
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -36,6 +37,11 @@ module.exports = {
             title: 'webpack Boilerplate',
             template: path.resolve(__dirname, './src/fight.html'),
             filename: 'fight.html',
+        }),
+        new HtmlWebpackPlugin({
+            title: 'webpack Boilerplate',
+            template: path.resolve(__dirname, './src/statistic.html'),
+            filename: 'statistic.html',
         }),
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),

@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Statistic</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
 <div id="app">
     <div v-if="rounds === null">
-        You must <a href="../../vue/src/index.html">log in</a>
+        You must <a href="./index.html">log in</a>
     </div>
   <ol>
     <li v-for="round in rounds" style="text-align: center">
@@ -28,6 +26,5 @@
     </li>
   </ol>
 </div>
-<script src="./statistic.js"></script>
 </body>
 </html>

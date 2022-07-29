@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98c7fe9c-1a67-4ae0-a49e-1ee77c471245" name="Changes" comment="vue local with npm start is work correctly">
-      <change beforePath="$PROJECT_DIR$/backend/templates/authentication/chelovek.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/authentication/chelovek2.png" beforeDir="false" afterPath="$PROJECT_DIR$/backend/vue/src/chelovek2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/vue/src/fight.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/vue/src/fight.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/vue/src/fight.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/vue/src/fight.js" afterDir="false" />
+    <list default="true" id="98c7fe9c-1a67-4ae0-a49e-1ee77c471245" name="Changes" comment="dont work link with image">
+      <change beforePath="$PROJECT_DIR$/backend/templates/authentication/statistic.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/vue/src/statistic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/authentication/statistic.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/vue/src/statistic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/authentication/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/vue/src/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/vue/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/vue/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +52,7 @@
       <recent name="$PROJECT_DIR$/backend/vue/src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.start">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="hitman" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -98,8 +97,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -113,7 +112,7 @@
       <updated>1656324545784</updated>
       <workItem from="1656324546944" duration="25000" />
       <workItem from="1656324996717" duration="34000" />
-      <workItem from="1659126065727" duration="6408000" />
+      <workItem from="1659126065727" duration="6755000" />
     </task>
     <task id="LOCAL-00001" summary="vue local with npm start is work correctly">
       <created>1659129989216</created>
@@ -122,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659129989218</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="dont work link with image">
+      <created>1659134151188</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659134151188</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,7 +147,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="vue local with npm start is work correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="vue local with npm start is work correctly" />
+    <MESSAGE value="dont work link with image" />
+    <option name="LAST_COMMIT_MESSAGE" value="dont work link with image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
