@@ -1,3 +1,5 @@
+import "./index.css"
+
 var app = new Vue({
     el: '#app',
     data: () => ({
@@ -17,6 +19,7 @@ var app = new Vue({
                 localStorage.setItem('token', response.data.user.token);
                 sessionStorage.setItem('token', response.data.user.token);
                 window.location = './fight.html';
+                // window.location = '../../templates/authentication/fight.html';
               })
               .catch(function (error) {
                   alert('Неверные имя пользователя или пароль');
