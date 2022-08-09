@@ -19,3 +19,7 @@ pip install -r requirements
 ```
 ./manage.py runserver
 ```
+### work with database
+```
+https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-20-04
+```

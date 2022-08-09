@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98c7fe9c-1a67-4ae0-a49e-1ee77c471245" name="Changes" comment="change architecture">
-      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="98c7fe9c-1a67-4ae0-a49e-1ee77c471245" name="Changes" comment="changed readme">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +44,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/backend/vue" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/backend/vue/src" />
     </key>
   </component>
@@ -121,7 +125,7 @@
       <workItem from="1656324546944" duration="25000" />
       <workItem from="1656324996717" duration="34000" />
       <workItem from="1659126065727" duration="6755000" />
-      <workItem from="1660080089936" duration="2489000" />
+      <workItem from="1660080089936" duration="2813000" />
     </task>
     <task id="LOCAL-00001" summary="vue local with npm start is work correctly">
       <created>1659129989216</created>
@@ -144,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660082292121</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="changed readme">
+      <created>1660082731302</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1660082731302</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +176,8 @@
     <MESSAGE value="vue local with npm start is work correctly" />
     <MESSAGE value="dont work link with image" />
     <MESSAGE value="change architecture" />
-    <option name="LAST_COMMIT_MESSAGE" value="change architecture" />
+    <MESSAGE value="changed readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
