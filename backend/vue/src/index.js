@@ -1,7 +1,12 @@
-import "./index.css"
+// import './index.css'
+// import './fight'
+// import './statistic'
+require('./index.css')
+require('./fight')
+require('./statistic')
 
 var app = new Vue({
-    el: '#app',
+    el: '#app_login',
     data: () => ({
         message: 'Message',
         username: '',
@@ -19,7 +24,6 @@ var app = new Vue({
                 localStorage.setItem('token', response.data.user.token);
                 sessionStorage.setItem('token', response.data.user.token);
                 window.location = './fight.html';
-                // window.location = '../../templates/authentication/fight.html';
               })
               .catch(function (error) {
                   alert('Неверные имя пользователя или пароль');

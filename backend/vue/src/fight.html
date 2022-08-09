@@ -7,13 +7,12 @@
 <body>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<link rel="stylesheet" href="./figth.css">
+<link rel="stylesheet" href="../dist/figth.css">
 
-<h3><a href="../../vue/src/index.html">Log in</a></h3>
+<h3><a href="index.html">Log in</a></h3>
 <div id="app-11" v-if="authenticate">
-<!--<img :src="imagesrc" alt="chelovek" id="chel1">-->
-<img :src="imag" alt="chelovek" id="chel2">
-<img src="./chelovek2.png" alt="chelovek" id="chel2">
+<img src="../authentication/chelovek2.png" alt="chelovek" id="chel1">
+<img src="../authentication/chelovek2.png" alt="chelovek" id="chel2">
     <form class="form">
     <p>Выберите 3 элемента для защиты</p>
    <select id="select1" multiple size="6" name="component-select">
@@ -42,6 +41,6 @@
     <input id='push' type="button" onclick="foo()" value="fight!">
 </div>
 <h3><a href="./statistic.html">Statistic</a></h3>
-<script src="fight.js"></script>
+<!--<script src="./fight.js"></script>-->
 </body>
 </html>

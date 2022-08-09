@@ -11,8 +11,8 @@ module.exports = {
     },
     entry: {
         main: path.resolve(__dirname, './src/index.js'),
-        add: path.resolve(__dirname, './src/fight.js'),
-        third: path.resolve(__dirname, './src/statistic.js'),
+        // add: path.resolve(__dirname, './src/fight.js'),
+        // third: path.resolve(__dirname, './src/statistic.js'),
     },
     output: {
         path: path.resolve(__dirname, './dist'),

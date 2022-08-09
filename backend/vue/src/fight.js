@@ -1,16 +1,7 @@
-import './figth.css'
-import image from './chelovek2.png'
-
-export default {
-    data: function() {
-        return {
-            imag: image
-        }
-    }
-};
-
+require('./figth.css')
+require('./statistic')
 function transform(array) {
-    var answer = []
+    answer = []
     for (var i = 0; i < 6; i++) {
         if (array[i].selected === true) {
             answer.push(i)
@@ -18,7 +9,7 @@ function transform(array) {
     }
     return answer
 }
-
+console.log('hello');
 function foo() {
     var attack = document.getElementById('select2').options;
     var defend = document.getElementById('select1').options;
@@ -30,7 +21,6 @@ function foo() {
         fight(transform(defend), transform(attack));
     }}
 };
-
 function check_length(array, str) {
     var l = array.length;
     var num_selected = 0;
