@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98c7fe9c-1a67-4ae0-a49e-1ee77c471245" name="Changes" comment="changed readme">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +14,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -33,7 +33,7 @@
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "12.22.9",
     "javascript.nodejs.core.library.typings.version": "12.20.55",
-    "last_opened_file_path": "/home/dmiv/PycharmProjects/test/hitman/backend",
+    "last_opened_file_path": "/home/dmiv/PycharmProjects/tes/hitman",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -126,6 +126,7 @@
       <workItem from="1656324996717" duration="34000" />
       <workItem from="1659126065727" duration="6755000" />
       <workItem from="1660080089936" duration="2813000" />
+      <workItem from="1660665588126" duration="337000" />
     </task>
     <task id="LOCAL-00001" summary="vue local with npm start is work correctly">
       <created>1659129989216</created>
