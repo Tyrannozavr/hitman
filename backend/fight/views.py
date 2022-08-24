@@ -5,6 +5,8 @@ from rest_framework import status
 import json
 from rest_framework import viewsets
 
+
+from .permissions import FightPermission
 from .models import Fight, Statistic
 from .serializers import FightSerializers, StatisticSerializer
 
@@ -25,7 +27,6 @@ class StatisticView(viewsets.ModelViewSet):
     queryset = Statistic.objects.all()
 
     def post(self, request):
-        # print('statistic', request.headers)
         players = Fight.objects.filter(finished=False)[:2]
         if len(players) < 2:
             return 'please wait'
@@ -41,8 +42,9 @@ class FightView(APIView):
     serializer_class = FightSerializers
     permission_classes = (IsAuthenticated,)
 
+
     def post(self, request):
-        # print('figst', request.headers)
+
         if len(Fight.objects.all()) > 0 and request.user == Fight.objects.last().user and not Fight.objects.last().finished:
             return Response(data='please wait', status=status.HTTP_306_RESERVED)
         data = request.data
@@ -50,9 +52,13 @@ class FightView(APIView):
         serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        print('crated', StatisticView.post(1, 2))   #it is required for created statistic, not simple print
+        # print('created', StatisticView.post(1, 2))   #it is required for created statistic, not simple print
+        obj = StatisticView.post(1, 2)
+        print(obj.__dict__)
+        print('hello', obj.num_round)
+        # в случае отрицательного доступа obj это строка
         return Response(data=json.dumps({
-            'created': 'true'
+            'num_round': obj.num_round
         }), status=status.HTTP_201_CREATED)
 
 
