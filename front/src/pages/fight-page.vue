@@ -33,48 +33,63 @@
 import axios from "axios";
 
 function check_length(array, str) {
-    var sum_selected = array.length;
-    if (sum_selected > 3) {
-        alert('Вы не можете выбрать более 3-х элеменов '+str);
-    } else {if (sum_selected < 3) {alert('Вы не можете выбрать менее 3-х элементов '+str)} else {
-        return true;
-    }}
+  var sum_selected = array.length;
+  if (sum_selected > 3) {
+    alert('Вы не можете выбрать более 3-х элеменов ' + str);
+  } else {
+    if (sum_selected < 3) {
+      alert('Вы не можете выбрать менее 3-х элементов ' + str)
+    } else {
+      return true;
+    }
+  }
 }
 
 export default {
   name: "test-page",
-  data () {
+  data() {
     return {
       attack: [],
       defend: [],
     }
-},
+  },
   methods: {
-    fight () {
+    fight() {
       if (check_length(this.attack, 'атаки') === true) {
         if (check_length(this.defend, 'защиты') === true) {
           axios.post("http://127.0.0.1:8000/fight/", {
             attack: this.attack,
             defend: this.defend,
-          }, {headers: {
-            Authorization: `Token ${sessionStorage.getItem('token')}`
-            }})
-              .catch( function (err) {
-                if (err.response.data === 'please wait') {
+          }, {
+            headers: {
+              Authorization: `Token ${sessionStorage.getItem('token')}`
+            }
+          })
+              .then( function(response) {
+                console.log('success', response);
+              })
+              .catch(function (err) {
+                if (err.response.data.detail === 'You do not have permission to perform this action.') {
                   alert('Please wait step second user')
                 } else {
-                  alert('You must log in')
+                  console.log(err.data);
+                  alert('Some error has occurred')
                 }
               })
         }
       }
-
     }
   }
 }
 </script>
 
 <style scoped>
-.form {float:left; width:50%}
-#push {width: 30%}
+.form {
+  float: left;
+  width: 50%
+}
+
+#push {
+  width: 30%
+}
 </style>

@@ -29,7 +29,7 @@ class StatisticView(viewsets.ModelViewSet):
     def post(self, request):
         players = Fight.objects.filter(finished=False)[:2]
         if len(players) < 2:
-            return 'please wait'
+            return False
         one_score, two_score = score(players[0], players[1])
         for i in players:
             i.finished = True
@@ -40,25 +40,25 @@ class StatisticView(viewsets.ModelViewSet):
 
 class FightView(APIView):
     serializer_class = FightSerializers
-    permission_classes = (IsAuthenticated,)
-
+    permission_classes = (FightPermission,)
 
     def post(self, request):
-
-        if len(Fight.objects.all()) > 0 and request.user == Fight.objects.last().user and not Fight.objects.last().finished:
-            return Response(data='please wait', status=status.HTTP_306_RESERVED)
         data = request.data
         data['user'] = request.user.username
         serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        # print('created', StatisticView.post(1, 2))   #it is required for created statistic, not simple print
         obj = StatisticView.post(1, 2)
-        print(obj.__dict__)
-        print('hello', obj.num_round)
-        # в случае отрицательного доступа obj это строка
+        if not obj:
+            return Response(data=json.dumps({
+                'detail': 'You do not have permission to perform this action.'
+            }), status=status.HTTP_429_TOO_MANY_REQUESTS)
         return Response(data=json.dumps({
-            'num_round': obj.num_round
+            'num_round': obj.num_round,
+            'first_player_id': obj.first_player_id,
+            'second_player_id': obj.second_player_id,
+            'first_player_score': obj.first_player_score,
+            'second_player_score': obj.second_player_score
         }), status=status.HTTP_201_CREATED)
 
 
