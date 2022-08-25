@@ -31,8 +31,7 @@
 
 <script>
 import axios from "axios";
-import {headers} from '@/pages/js/methods'
-// import {defend_axios} from "@/pages/js/methods";
+import {BASE_URL, headers} from '@/pages/js/methods'
 
 function check_length(array, str) {
   var sum_selected = array.length;
@@ -59,7 +58,7 @@ export default {
     fight() {
       if (check_length(this.attack, 'атаки') === true) {
         if (check_length(this.defend, 'защиты') === true) {
-          axios.post("http://127.0.0.1:8000/fight/", {
+          axios.post(BASE_URL + "fight/", {
             attack: this.attack,
             defend: this.defend,
           }, {

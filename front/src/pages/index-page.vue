@@ -18,7 +18,6 @@
   </div>
 </template>
 <script>
-// import {public_axios} from './js/methods'
 
 import axios from "axios";
 import {BASE_URL} from "@/pages/js/methods";
@@ -31,14 +30,6 @@ export default {
     }
   },
   methods: {
-    // login () {
-    //   public_axios('api/users/login/', {user: {
-    //           username: this.username,
-    //           password: this.password,
-    //         }}).then( function () {
-    //           console.log('then');
-    //   });
-    // }
     login () {
   axios.post(BASE_URL + 'api/users/login/', {
     user: {
