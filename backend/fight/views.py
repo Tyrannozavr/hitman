@@ -31,24 +31,14 @@ def fight():
         i.finished = True
         i.save()
     num = Statistic.objects.last().num_round + 1 if len(Statistic.objects.all()) > 0 else 1
-    return Statistic.objects.create(num_round=num, first_player=players[0], second_player=players[1])
+    return Statistic.objects.create(num_round=num, first_player=players[0], second_player=players[1],
+                                    first_player_score=one_score, second_player_score=two_score)
 
 class StatisticView(viewsets.ModelViewSet):
     serializer_class = StatisticSerializer
     permission_classes = (IsAuthenticated,)
     queryset = Statistic.objects.all()
 
-    # def post(self, request):
-    #     players = Fight.objects.filter(finished=False)[:2]
-    #     if len(players) < 2:
-    #         return False
-    #     one_score, two_score = score(players[0], players[1])
-    #     for i in players:
-    #         i.finished = True
-    #         i.save()
-    #     num = Statistic.objects.last().num_round + 1 if len(Statistic.objects.all()) > 0 else 1 # set num round
-    #     return Statistic.objects.create(num_round=num, first_player=players[0], second_player=players[1],
-    #                                     first_player_score=one_score, second_player_score=two_score)
 
 class FightView(APIView):
     serializer_class = FightSerializers
