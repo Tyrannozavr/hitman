@@ -50,9 +50,10 @@ class FightView(APIView):
         serializer.save()
         obj = StatisticView.post(1, 2)
         if not obj:
+            # print('only one')
             return Response(data=json.dumps({
-                'detail': 'You do not have permission to perform this action.'
-            }), status=status.HTTP_429_TOO_MANY_REQUESTS)
+                "detail": 'fight only one user'
+            }), status=status.HTTP_201_CREATED)
         return Response(data=json.dumps({
             'num_round': obj.num_round,
             'first_player_id': obj.first_player_id,

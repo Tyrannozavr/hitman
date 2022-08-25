@@ -66,13 +66,23 @@ export default {
             }
           })
               .then( function(response) {
-                console.log('success', response);
+                // console.log(JSON.parse(response.data).hello)
+                if (JSON.parse(response.data).detail === 'fight only one user') {
+                  alert('your move is recorded, wait for another player\'s move')
+                } else {
+                  alert('the battle is done, see the statistics')
+                }
+
               })
               .catch(function (err) {
+                console.log('error');
+                console.log((err.response));
+                console.log(err.response.data);
+                console.log(err.response.data.detail);
                 if (err.response.data.detail === 'You do not have permission to perform this action.') {
                   alert('Please wait step second user')
                 } else {
-                  console.log(err.data);
+                  console.log(err);
                   alert('Some error has occurred')
                 }
               })
