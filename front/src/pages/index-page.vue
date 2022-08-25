@@ -15,11 +15,12 @@
      </form>
    </div>
    </div>
-<!--  <router-link to="/fight">fight</router-link>-->
   </div>
 </template>
 <script>
 import axios from 'axios'
+import {test} from './js/methods'
+
 export default {
   data: function () {
     return {
@@ -37,7 +38,6 @@ export default {
             }
           })
               .then(function (response) {
-                // localStorage.setItem('token', response.data.user.token);
                 sessionStorage.setItem('token', response.data.user.token);
                 window.location = 'http://localhost:8080/fight';
               })
@@ -48,6 +48,7 @@ export default {
         }
   }
 }
+test()
 </script>
 <style>
 .form-container{

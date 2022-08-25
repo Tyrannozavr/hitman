@@ -31,7 +31,6 @@
 
 <script>
 import axios from "axios";
-
 function check_length(array, str) {
   var sum_selected = array.length;
   if (sum_selected > 3) {
@@ -97,4 +96,3 @@ export default {
 #push {
   width: 30%
 }
-</style>

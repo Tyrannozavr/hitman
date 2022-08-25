@@ -3,6 +3,9 @@
     <div v-if="rounds === null">
         You must <a href="./">log in</a>
     </div>
+  <div>
+    <h1><a href="./fight">Fight</a></h1>
+  </div>
   <ol>
     <li v-for="round in rounds" v-bind:key="round.id" style="text-align: center">
         <h2>Round N {{ round.num_round }}</h2>

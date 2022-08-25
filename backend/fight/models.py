@@ -2,6 +2,7 @@ from django.db import models
 from authentication.models import User
 from django.contrib.postgres.fields import ArrayField
 
+
 class Fight(models.Model):
     choice = [
         ('1', 'Голова'),
