@@ -18,9 +18,10 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
-import {test} from './js/methods'
+// import {public_axios} from './js/methods'
 
+import axios from "axios";
+import {BASE_URL} from "@/pages/js/methods";
 export default {
   data: function () {
     return {
@@ -30,25 +31,32 @@ export default {
     }
   },
   methods: {
-        login () {
-          axios.post('http://127.0.0.1:8000/api/users/login/', {
-            user: {
-              username: this.username,
-              password: this.password,
-            }
-          })
-              .then(function (response) {
-                sessionStorage.setItem('token', response.data.user.token);
-                window.location = 'http://localhost:8080/fight';
-              })
-              .catch(function (error) {
-                alert('Неверные имя пользователя или пароль');
-                console.log(error);
-              })
-        }
+    // login () {
+    //   public_axios('api/users/login/', {user: {
+    //           username: this.username,
+    //           password: this.password,
+    //         }}).then( function () {
+    //           console.log('then');
+    //   });
+    // }
+    login () {
+  axios.post(BASE_URL + 'api/users/login/', {
+    user: {
+      username: this.username,
+      password: this.password,
+    }
+  })
+      .then(function (response) {
+        sessionStorage.setItem('token', response.data.user.token);
+        window.location = 'http://localhost:8080/fight';
+      })
+      .catch(function (error) {
+        alert('Неверные имя пользователя или пароль');
+        console.log(error);
+      })
+}
   }
 }
-test()
 </script>
 <style>
 .form-container{

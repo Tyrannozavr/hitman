@@ -31,6 +31,9 @@
 
 <script>
 import axios from "axios";
+import {headers} from '@/pages/js/methods'
+// import {defend_axios} from "@/pages/js/methods";
+
 function check_length(array, str) {
   var sum_selected = array.length;
   if (sum_selected > 3) {
@@ -60,9 +63,7 @@ export default {
             attack: this.attack,
             defend: this.defend,
           }, {
-            headers: {
-              Authorization: `Token ${sessionStorage.getItem('token')}`
-            }
+            headers: headers
           })
               .then( function(response) {
                 if (JSON.parse(response.data).detail === 'fight only one user') {
@@ -85,6 +86,7 @@ export default {
     }
   }
 }
+// defend_axios()
 </script>
 
 <style scoped>
