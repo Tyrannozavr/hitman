@@ -4,6 +4,7 @@ from rest_framework import status, viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from authentication.models import User
 
 from .models import Fight, Statistic
 from .permissions import FightPermission
@@ -16,7 +17,7 @@ def score(user_one, user_two):
     one_defend = user_one.defend
     two_attack = user_two.attack
     two_defend = user_two.defend
-    scores = {'0': 3, '1': 2, '2': 1, '3': 1, '4': 1, '5': 1}
+    scores = {'голова': 3, 'туловище': 2, 'левая рука': 1, 'правая рука': 1, 'левая нога': 1, 'правая нога': 1}
     one_score = [scores[i] if i not in two_defend else 0 for i in one_attack]
     two_score = [scores[i] if i not in one_defend else 0 for i in two_attack]
     return sum(one_score), sum(two_score)
@@ -39,17 +40,23 @@ class StatisticView(APIView):
     queryset = Statistic.objects.all()
 
     def get(self, request):
+        """preparing data before send"""
         data = Statistic.objects.all()
         data = [i.__dict__ for i in data]
-        for i in data:
+
+        for i in data: #replacing user link with user data and user_id with user.username
             i.pop('_state')
             i['first_player'] = Fight.objects.get(id=i.pop('first_player_id')).__dict__
             i['first_player'].pop('_state')
             i['second_player'] = Fight.objects.get(id=i.pop('second_player_id')).__dict__
             i['second_player'].pop('_state')
+            i['first_player']['user'] = User.objects.get(id=i['first_player'].pop('user_id')).username
+            i['second_player']['user'] = User.objects.get(id=i['second_player'].pop('user_id')).username
 
-            print(i)
-        print('end')
+            redundant_data = ['id', 'finished']   #removing redundant data
+            for j in redundant_data:
+                i['first_player'].pop(j)
+                i['second_player'].pop(j)
         return Response(data)
 
 

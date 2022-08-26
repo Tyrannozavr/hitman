@@ -5,12 +5,12 @@ from django.contrib.postgres.fields import ArrayField
 
 class Fight(models.Model):
     choice = [
-        ('1', 'Голова'),
-        ('2', 'Туловище'),
-        ('3', 'Левая рука'),
-        ('4', 'Правая рука'),
-        ('5', 'Левая нога'),
-        ('6', 'Правая нога'),
+        ('голова', 'голова'),
+        ('туловище', 'туловище'),
+        ('левая рука', 'левая рука'),
+        ('правая рука', 'правая рука'),
+        ('левая нога', 'левая нога'),
+        ('правая нога', 'правая нога'),
     ]
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     attack = ArrayField(
