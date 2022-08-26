@@ -30,8 +30,7 @@
 </template>
 
 <script>
-import axios from "axios";
-import {BASE_URL, headers} from '@/pages/js/methods'
+import instance from '@/pages/js/methods'
 
 function check_length(array, str) {
   var sum_selected = array.length;
@@ -57,28 +56,25 @@ export default {
   methods: {
     fight() {
       if (check_length(this.attack, 'атаки') && check_length(this.defend, 'защиты')) {
-          axios.post(BASE_URL + "fight/", {
-            attack: this.attack,
-            defend: this.defend,
-          }, {
-            headers: headers
-          })
-              .then( function(response) {
-                if (response.data.detail === 'fight only one user') {
-                  alert('your move is recorded, wait for another player\'s move')
-                } else {
-                  alert('the battle is done, see the statistics')
-                }
-
-              })
-              .catch(function (err) {
-                if (err.response.data.detail === 'You do not have permission to perform this action.') {
-                  alert('Please wait step second user')
-                } else {
-                  console.log(err);
-                  alert('Some error has occurred')
-                }
-              })
+        instance({requiresAuth: true}).post('fight/', {
+          attack: this.attack,
+          defend: this.defend
+        })
+            .then( function(response) {
+              if (response.data.detail === 'fight only one user') {
+                alert('Your move is recorded, wait for another player\'s move')
+              } else {
+                alert('the battle is done, see the statistics')
+              }
+            })
+            .catch(function (err) {
+              if (err.response.data.detail === 'You do not have permission to perform this action.') {
+                alert('Please wait for your opponent\'s turn')
+              } else {
+                console.log(err);
+                alert('Some error has occurred')
+              }
+            })
       }
     }
   }

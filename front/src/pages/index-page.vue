@@ -18,11 +18,9 @@
   </div>
 </template>
 <script>
-
-// import axios from "axios";
-// import {BASE_URL} from "@/pages/js/methods";
-
 import instance from '@/pages/js/methods';
+
+
 export default {
   data: function () {
     return {
