@@ -33,11 +33,30 @@ def fight():
     return Statistic.objects.create(num_round=num, first_player=players[0], second_player=players[1],
                                     first_player_score=one_score, second_player_score=two_score)
 
-class StatisticView(viewsets.ModelViewSet):
+class StatisticView(APIView):
     serializer_class = StatisticSerializer
     permission_classes = (IsAuthenticated,)
     queryset = Statistic.objects.all()
 
+    def get(self, request):
+        data = Statistic.objects.all()
+        data = [i.__dict__ for i in data]
+        for i in data:
+            i.pop('_state')
+            i['first_player'] = Fight.objects.get(id=i.pop('first_player_id')).__dict__
+            i['first_player'].pop('_state')
+            i['second_player'] = Fight.objects.get(id=i.pop('second_player_id')).__dict__
+            i['second_player'].pop('_state')
+
+            print(i)
+        print('end')
+        return Response(data)
+
+
+class StatisticView2(viewsets.ModelViewSet):
+    serializer_class = StatisticSerializer
+    permission_classes = (IsAuthenticated,)
+    queryset = Statistic.objects.all()
 
 class FightView(APIView):
     serializer_class = FightSerializers
@@ -51,16 +70,16 @@ class FightView(APIView):
         serializer.save()
         obj = fight()
         if not obj:
-            return Response(data=json.dumps({
+            return Response(data={
                 "detail": 'fight only one user'
-            }), status=status.HTTP_201_CREATED)
-        return Response(data=json.dumps({
+            }, status=status.HTTP_201_CREATED)
+        return Response(data={
             'num_round': obj.num_round,
             'first_player_id': obj.first_player_id,
             'second_player_id': obj.second_player_id,
             'first_player_score': obj.first_player_score,
             'second_player_score': obj.second_player_score
-        }), status=status.HTTP_201_CREATED)
+        }, status=status.HTTP_201_CREATED)
 
 
 

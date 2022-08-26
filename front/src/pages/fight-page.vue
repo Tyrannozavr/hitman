@@ -56,8 +56,7 @@ export default {
   },
   methods: {
     fight() {
-      if (check_length(this.attack, 'атаки') === true) {
-        if (check_length(this.defend, 'защиты') === true) {
+      if (check_length(this.attack, 'атаки') && check_length(this.defend, 'защиты')) {
           axios.post(BASE_URL + "fight/", {
             attack: this.attack,
             defend: this.defend,
@@ -65,7 +64,7 @@ export default {
             headers: headers
           })
               .then( function(response) {
-                if (JSON.parse(response.data).detail === 'fight only one user') {
+                if (response.data.detail === 'fight only one user') {
                   alert('your move is recorded, wait for another player\'s move')
                 } else {
                   alert('the battle is done, see the statistics')
@@ -80,12 +79,10 @@ export default {
                   alert('Some error has occurred')
                 }
               })
-        }
       }
     }
   }
 }
-// defend_axios()
 </script>
 
 <style scoped>
