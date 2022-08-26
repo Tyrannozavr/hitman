@@ -25,8 +25,7 @@
 </template>
 <script>
 
-import axios from 'axios'
-import {BASE_URL, headers} from "@/pages/js/methods";
+import instance from "@/pages/js/methods";
 
 export default {
   name: 'StatisticPage',
@@ -37,12 +36,13 @@ export default {
     }
   },
   mounted () {
-axios.get(BASE_URL + 'fight/statistic', {headers: headers})
-    .then(response => (
-        this.rounds = response.data))
-    .catch(function (err) {
-      console.log(err);
-    })
+    instance({requiresAuth: true}).get('fight/statistic')
+        .then(response => (
+            this.rounds = response.data
+        ))
+        .catch(function (err) {
+          console.log(err);
+        })
   }
 }
 </script>
