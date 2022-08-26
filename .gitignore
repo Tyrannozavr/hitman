@@ -2,3 +2,6 @@
 *.pyc
 .idea
 /backend/fight/migrations/__pycache__
+/backend/fight/__pycache__
+/backend/backend/__pycache__
+
