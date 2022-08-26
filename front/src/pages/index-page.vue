@@ -19,8 +19,10 @@
 </template>
 <script>
 
-import axios from "axios";
-import {BASE_URL} from "@/pages/js/methods";
+// import axios from "axios";
+// import {BASE_URL} from "@/pages/js/methods";
+
+import instance from '@/pages/js/methods';
 export default {
   data: function () {
     return {
@@ -31,21 +33,22 @@ export default {
   },
   methods: {
     login () {
-  axios.post(BASE_URL + 'api/users/login/', {
-    user: {
-      username: this.username,
-      password: this.password,
+      return instance({requiresAuth: false}).post('api/users/login/', {
+        user: {
+          username: this.username,
+          password: this.password
+        }
+          }
+      )
+          .then( function (response) {
+            sessionStorage.setItem('token', response.data.user.token);
+            window.location = './fight'
+          })
+          .catch( function (error) {
+            alert('Неверные имя пользователя или пароль');
+            console.log(error);
+          })
     }
-  })
-      .then(function (response) {
-        sessionStorage.setItem('token', response.data.user.token);
-        window.location = 'http://localhost:8080/fight';
-      })
-      .catch(function (error) {
-        alert('Неверные имя пользователя или пароль');
-        console.log(error);
-      })
-}
   }
 }
 </script>
