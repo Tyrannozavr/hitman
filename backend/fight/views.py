@@ -4,6 +4,7 @@ from rest_framework import status, viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from authentication.models import User
 
 from .models import Fight, Statistic
 from .permissions import FightPermission
@@ -16,7 +17,7 @@ def score(user_one, user_two):
     one_defend = user_one.defend
     two_attack = user_two.attack
     two_defend = user_two.defend
-    scores = {'0': 3, '1': 2, '2': 1, '3': 1, '4': 1, '5': 1}
+    scores = {'голова': 3, 'туловище': 2, 'левая рука': 1, 'правая рука': 1, 'левая нога': 1, 'правая нога': 1}
     one_score = [scores[i] if i not in two_defend else 0 for i in one_attack]
     two_score = [scores[i] if i not in one_defend else 0 for i in two_attack]
     return sum(one_score), sum(two_score)
@@ -33,11 +34,36 @@ def fight():
     return Statistic.objects.create(num_round=num, first_player=players[0], second_player=players[1],
                                     first_player_score=one_score, second_player_score=two_score)
 
-class StatisticView(viewsets.ModelViewSet):
+class StatisticView(APIView):
     serializer_class = StatisticSerializer
     permission_classes = (IsAuthenticated,)
     queryset = Statistic.objects.all()
 
+    def get(self, request):
+        """preparing data before send"""
+        data = Statistic.objects.all()
+        data = [i.__dict__ for i in data]
+
+        for i in data: #replacing user link with user data and user_id with user.username
+            i.pop('_state')
+            i['first_player'] = Fight.objects.get(id=i.pop('first_player_id')).__dict__
+            i['first_player'].pop('_state')
+            i['second_player'] = Fight.objects.get(id=i.pop('second_player_id')).__dict__
+            i['second_player'].pop('_state')
+            i['first_player']['user'] = User.objects.get(id=i['first_player'].pop('user_id')).username
+            i['second_player']['user'] = User.objects.get(id=i['second_player'].pop('user_id')).username
+
+            redundant_data = ['id', 'finished']   #removing redundant data
+            for j in redundant_data:
+                i['first_player'].pop(j)
+                i['second_player'].pop(j)
+        return Response(data)
+
+
+class StatisticView2(viewsets.ModelViewSet):
+    serializer_class = StatisticSerializer
+    permission_classes = (IsAuthenticated,)
+    queryset = Statistic.objects.all()
 
 class FightView(APIView):
     serializer_class = FightSerializers
@@ -51,16 +77,16 @@ class FightView(APIView):
         serializer.save()
         obj = fight()
         if not obj:
-            return Response(data=json.dumps({
+            return Response(data={
                 "detail": 'fight only one user'
-            }), status=status.HTTP_201_CREATED)
-        return Response(data=json.dumps({
+            }, status=status.HTTP_201_CREATED)
+        return Response(data={
             'num_round': obj.num_round,
             'first_player_id': obj.first_player_id,
             'second_player_id': obj.second_player_id,
             'first_player_score': obj.first_player_score,
             'second_player_score': obj.second_player_score
-        }), status=status.HTTP_201_CREATED)
+        }, status=status.HTTP_201_CREATED)
 
 
 

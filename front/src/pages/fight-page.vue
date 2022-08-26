@@ -5,22 +5,22 @@
     <form @submit.prevent="fight" class="form">
       <p>Выберите 3 элемента атаки</p>
       <select multiple size="6" name="component-select" v-model="attack">
-        <option value="0">Голова</option>
-        <option value="1">Туловище</option>
-        <option value="2">Левая рука</option>
-        <option value="3">Правая рука</option>
-        <option value="4">Левая нога</option>
-        <option value="5">Правая нога</option>
+        <option value="голова">Голова</option>
+        <option value="туловище">Туловище</option>
+        <option value="левая рука">Левая рука</option>
+        <option value="правая рука">Правая рука</option>
+        <option value="левая нога">Левая нога</option>
+        <option value="правая нога">Правая нога</option>
       </select>
       <p>Выберите 3 элемента защиты</p>
       <select multiple size="6" name="component-select" v-model="defend">
 
-        <option value="0">Голова</option>
-        <option value="1">Туловище</option>
-        <option value="2">Левая рука</option>
-        <option value="3">Правая рука</option>
-        <option value="4">Левая нога</option>
-        <option value="5">Правая нога</option>
+        <option value="голова">Голова</option>
+        <option value="туловище">Туловище</option>
+        <option value="левая рука">Левая рука</option>
+        <option value="правая рука">Правая рука</option>
+        <option value="левая нога">Левая нога</option>
+        <option value="правая нога">Правая нога</option>
       </select>
       <br>
       <button type="submit" id="push">Fight</button>
@@ -56,8 +56,7 @@ export default {
   },
   methods: {
     fight() {
-      if (check_length(this.attack, 'атаки') === true) {
-        if (check_length(this.defend, 'защиты') === true) {
+      if (check_length(this.attack, 'атаки') && check_length(this.defend, 'защиты')) {
           axios.post(BASE_URL + "fight/", {
             attack: this.attack,
             defend: this.defend,
@@ -65,7 +64,7 @@ export default {
             headers: headers
           })
               .then( function(response) {
-                if (JSON.parse(response.data).detail === 'fight only one user') {
+                if (response.data.detail === 'fight only one user') {
                   alert('your move is recorded, wait for another player\'s move')
                 } else {
                   alert('the battle is done, see the statistics')
@@ -80,12 +79,10 @@ export default {
                   alert('Some error has occurred')
                 }
               })
-        }
       }
     }
   }
 }
-// defend_axios()
 </script>
 
 <style scoped>
