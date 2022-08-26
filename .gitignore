@@ -1,1 +1,4 @@
 /backend/venv/
+*.pyc
+.idea
+/backend/fight/migrations/__pycache__

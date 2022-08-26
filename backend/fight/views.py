@@ -1,13 +1,12 @@
-from rest_framework.views import APIView
-from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework.response import Response
-from rest_framework import status
 import json
-from rest_framework import viewsets
 
+from rest_framework import status, viewsets
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
-from .permissions import FightPermission
 from .models import Fight, Statistic
+from .permissions import FightPermission
 from .serializers import FightSerializers, StatisticSerializer
 
 
@@ -50,7 +49,6 @@ class FightView(APIView):
         serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        # obj = StatisticView.post(1, 2)
         obj = fight()
         if not obj:
             return Response(data=json.dumps({

@@ -15,11 +15,12 @@
      </form>
    </div>
    </div>
-<!--  <router-link to="/fight">fight</router-link>-->
   </div>
 </template>
 <script>
-import axios from 'axios'
+
+import axios from "axios";
+import {BASE_URL} from "@/pages/js/methods";
 export default {
   data: function () {
     return {
@@ -29,23 +30,22 @@ export default {
     }
   },
   methods: {
-        login () {
-          axios.post('http://127.0.0.1:8000/api/users/login/', {
-            user: {
-              username: this.username,
-              password: this.password,
-            }
-          })
-              .then(function (response) {
-                // localStorage.setItem('token', response.data.user.token);
-                sessionStorage.setItem('token', response.data.user.token);
-                window.location = 'http://localhost:8080/fight';
-              })
-              .catch(function (error) {
-                alert('Неверные имя пользователя или пароль');
-                console.log(error);
-              })
-        }
+    login () {
+  axios.post(BASE_URL + 'api/users/login/', {
+    user: {
+      username: this.username,
+      password: this.password,
+    }
+  })
+      .then(function (response) {
+        sessionStorage.setItem('token', response.data.user.token);
+        window.location = 'http://localhost:8080/fight';
+      })
+      .catch(function (error) {
+        alert('Неверные имя пользователя или пароль');
+        console.log(error);
+      })
+}
   }
 }
 </script>

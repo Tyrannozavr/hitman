@@ -3,6 +3,9 @@
     <div v-if="rounds === null">
         You must <a href="./">log in</a>
     </div>
+  <div>
+    <h1><a href="./fight">Fight</a></h1>
+  </div>
   <ol>
     <li v-for="round in rounds" v-bind:key="round.id" style="text-align: center">
         <h2>Round N {{ round.num_round }}</h2>
@@ -23,6 +26,7 @@
 <script>
 
 import axios from 'axios'
+import {BASE_URL, headers} from "@/pages/js/methods";
 function part_body (data) {
       var len = data.length
       var part_body = {0: 'head', 1: 'body', 2: 'left hand', 3: 'right hand', 4: 'left foot', 5: 'right foot'};
@@ -56,12 +60,9 @@ export default {
     }
   },
   mounted () {
-axios.get('http://127.0.0.1:8000/fight/statistic', {headers: {
-  Authorization: `Token ${sessionStorage.getItem('token')}`
-  }})
+axios.get(BASE_URL + 'fight/statistic', {headers: headers})
     .then(response => (
         part_body(response.data),
-        // console.log(response.data),
         this.rounds = response.data))
     .catch(function (err) {
       console.log(err);
