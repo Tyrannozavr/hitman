@@ -1,10 +1,10 @@
 import json
 
+from authentication.models import User
 from rest_framework import status, viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from authentication.models import User
 
 from .models import Fight, Statistic
 from .permissions import FightPermission

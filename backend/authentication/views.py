@@ -1,10 +1,13 @@
-from rest_framework.views import APIView
+import json
+
+from rest_framework import status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
-from rest_framework import status
-from .serializers import RegistrationSerializer, LoginSerializer
+from rest_framework.views import APIView
+
 from .renderers import UserJsonRenderers
-import json
+from .serializers import LoginSerializer, RegistrationSerializer
+
 
 class Authenticate(APIView):
     permission_classes = (AllowAny,)

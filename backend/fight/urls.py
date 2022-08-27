@@ -1,4 +1,5 @@
 from django.urls import path
+
 from .views import FightView, StatisticView
 
 app_name = 'fight'

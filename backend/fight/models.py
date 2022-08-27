@@ -1,6 +1,6 @@
-from django.db import models
 from authentication.models import User
 from django.contrib.postgres.fields import ArrayField
+from django.db import models
 
 
 class Fight(models.Model):

@@ -1,5 +1,7 @@
 from rest_framework import permissions
+
 from .models import Fight
+
 
 class FightPermission(permissions.BasePermission):
     def has_permission(self, request, view):
