@@ -36,7 +36,7 @@ export default {
     }
   },
   mounted () {
-    instance({requiresAuth: true}).get('fight/statistic')
+    instance().get('fight/statistic')
         .then(response => (
             this.rounds = response.data
         ))
