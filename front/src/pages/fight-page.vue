@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import instance from '@/pages/js/methods'
+import instance from '@/js/AxiosSetting'
 
 function check_length(array, str) {
   var sum_selected = array.length;

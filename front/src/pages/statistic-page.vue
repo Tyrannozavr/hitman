@@ -25,7 +25,7 @@
 </template>
 <script>
 
-import instance from "@/pages/js/methods";
+import instance from "@/js/AxiosSetting";
 
 export default {
   name: 'StatisticPage',
@@ -36,7 +36,7 @@ export default {
     }
   },
   mounted () {
-    instance().get('fight/statistic')
+    instance({requiresAuth: true}).get('fight/statistic')
         .then(response => (
             this.rounds = response.data
         ))

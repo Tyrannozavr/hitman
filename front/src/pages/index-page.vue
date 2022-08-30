@@ -18,7 +18,7 @@
   </div>
 </template>
 <script>
-import instance from '@/pages/js/methods';
+import instance from '@/js/AxiosSetting';
 
 
 export default {

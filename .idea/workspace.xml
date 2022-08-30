@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a734d10-6967-4365-92ac-56e90abd1ea3" name="Changes" comment="deleted comments and some change in auto-unsert token">
+    <list default="true" id="9a734d10-6967-4365-92ac-56e90abd1ea3" name="Changes" comment="add updating token after expiration">
+      <change beforePath="$PROJECT_DIR$/.idea/hitman.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hitman.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/pages/fight-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/fight-page.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/pages/js/methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/js/methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/pages/index-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/index-page.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/pages/js/methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/js/AxiosSetting.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/pages/statistic-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/statistic-page.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +19,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,6 +56,7 @@
       <workItem from="1661631441812" duration="493000" />
       <workItem from="1661794849703" duration="3379000" />
       <workItem from="1661843072286" duration="14149000" />
+      <workItem from="1661867517225" duration="932000" />
     </task>
     <task id="LOCAL-00001" summary="isort)">
       <created>1661631927634</created>
@@ -74,7 +79,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661851954838</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add updating token after expiration">
+      <created>1661867578438</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661867578438</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add updating token after expiration">
+      <created>1661867648504</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661867648504</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +114,7 @@
     <MESSAGE value="isort)" />
     <MESSAGE value="added auto-insert headers autorization" />
     <MESSAGE value="deleted comments and some change in auto-unsert token" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted comments and some change in auto-unsert token" />
+    <MESSAGE value="add updating token after expiration" />
+    <option name="LAST_COMMIT_MESSAGE" value="add updating token after expiration" />
   </component>
 </project>
