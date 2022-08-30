@@ -56,7 +56,7 @@ export default {
   methods: {
     fight() {
       if (check_length(this.attack, 'атаки') && check_length(this.defend, 'защиты')) {
-        instance({requiresAuth: false}).post('fight/', {
+        instance().post('fight/', {
           attack: this.attack,
           defend: this.defend
         })
@@ -68,7 +68,7 @@ export default {
               }
             })
             .catch(function (err) {
-              if (err.response.data.detail === 'You do not have permission to perform this action.') {
+              if (err.response && err.response.data && err.response.data.detail === 'You do not have permission to perform this action.') {
                 alert('Please wait for your opponent\'s turn')
               } else {
                 console.log(err);
