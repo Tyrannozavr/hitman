@@ -60,11 +60,6 @@ class StatisticView(APIView):
         return Response(data)
 
 
-class StatisticView2(viewsets.ModelViewSet):
-    serializer_class = StatisticSerializer
-    permission_classes = (IsAuthenticated,)
-    queryset = Statistic.objects.all()
-
 class FightView(APIView):
     serializer_class = FightSerializers
     permission_classes = (FightPermission,)
