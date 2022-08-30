@@ -61,18 +61,18 @@ export default {
           defend: this.defend
         })
             .then( function(response) {
-              if (response && response.data && response.data.detail === 'fight only one user') {
+              if (response.data.detail === 'fight only one user') {
                 alert('Your move is recorded, wait for another player\'s move')
               } else {
                 alert('the battle is done, see the statistics')
               }
             })
             .catch(function (err) {
-              // console.log('error_fight', err.response.data.detail)
-              if (err.response && err.response.data.detail === 'You do not have permission to perform this action.') {
+              if (err.response.data.detail === 'You do not have permission to perform this action.') {
                 alert('Please wait for your opponent\'s turn')
               } else {
                 console.log(err);
+                alert('Some error has occurred')
               }
             })
       }
