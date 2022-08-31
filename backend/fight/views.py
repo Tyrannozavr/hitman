@@ -2,7 +2,7 @@ import json
 
 from authentication.models import User
 from rest_framework import status, viewsets
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -62,26 +62,28 @@ class StatisticView(APIView):
 
 class FightView(APIView):
     serializer_class = FightSerializers
-    permission_classes = (FightPermission,)
+    permission_classes = (AllowAny,)
 
     def post(self, request):
-        data = request.data
-        data['user'] = request.user.username
-        serializer = self.serializer_class(data=data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        obj = fight()
-        if not obj:
-            return Response(data={
-                "detail": 'fight only one user'
-            }, status=status.HTTP_201_CREATED)
-        return Response(data={
-            'num_round': obj.num_round,
-            'first_player_id': obj.first_player_id,
-            'second_player_id': obj.second_player_id,
-            'first_player_score': obj.first_player_score,
-            'second_player_score': obj.second_player_score
-        }, status=status.HTTP_201_CREATED)
+        print('post')
+        # data = request.data
+        # data['user'] = request.user.username
+        # serializer = self.serializer_class(data=data)
+        # serializer.is_valid(raise_exception=True)
+        # serializer.save()
+        # obj = fight()
+        # if not obj:
+        #     return Response(data={
+        #         "detail": 'fight only one user'
+        #     }, status=status.HTTP_201_CREATED)
+        return Response({'error': 'Token does not exist'}, status=status.HTTP_401_UNAUTHORIZED)
+        # return Response(data={
+        #     'num_round': obj.num_round,
+        #     'first_player_id': obj.first_player_id,
+        #     'second_player_id': obj.second_player_id,
+        #     'first_player_score': obj.first_player_score,
+        #     'second_player_score': obj.second_player_score
+        # }, status=status.HTTP_201_CREATED)
 
 
 

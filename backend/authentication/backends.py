@@ -1,4 +1,5 @@
 import jwt
+import rest_framework.status
 from django.conf import settings
 from rest_framework import authentication, exceptions
 
@@ -39,7 +40,10 @@ class JWTAuthentication(authentication.BaseAuthentication):
             payload = jwt.decode(token, settings.SECRET_KEY)
         except Exception:
             msg = 'Authentication failed. Unable to decode token'
-            raise exceptions.AuthenticationFailed(msg)
+            raise exceptions.NotAuthenticated(msg)
+
+
+            # raise exceptions.AuthenticationFailed(msg, code=rest_framework.status.HTTP_401_UNAUTHORIZED)
 
         try:
             user = User.objects.get(pk=payload['id'])
