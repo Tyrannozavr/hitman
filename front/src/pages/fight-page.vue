@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import instance from '@/js/AxiosSetting'
+import axiosInstance from '@/utils/AxiosSetting'
 
 function check_length(array, str) {
   var sum_selected = array.length;
@@ -56,7 +56,7 @@ export default {
   methods: {
     fight() {
       if (check_length(this.attack, 'атаки') && check_length(this.defend, 'защиты')) {
-        instance({requiresAuth: true}).post('fight/', {
+        axiosInstance({requiresAuth: true}).post('fight/', {
           attack: this.attack,
           defend: this.defend
         })

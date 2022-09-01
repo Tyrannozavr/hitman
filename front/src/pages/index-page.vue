@@ -18,7 +18,7 @@
   </div>
 </template>
 <script>
-import instance from '@/js/AxiosSetting';
+import instance from '@/utils/AxiosSetting';
 
 
 export default {

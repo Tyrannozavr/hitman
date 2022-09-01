@@ -6,12 +6,11 @@ export default ({requiresAuth = false} = {}) => {
   options.timeout = 1000;
   if (requiresAuth && sessionStorage.getItem('token')) {
     options.headers = {'Authorization': `Token ${sessionStorage.getItem('token')}`}
-      // console.log('no token')
   }
 
-  const instance = axios.create(options);
+  const axiosInstance = axios.create(options);
 
-  instance.interceptors.response.use(
+  axiosInstance.interceptors.response.use(
       function(response) {
         return response
       },
@@ -25,5 +24,5 @@ export default ({requiresAuth = false} = {}) => {
       return Promise.reject(error)
       }
   )
-    return instance
+    return axiosInstance
 };

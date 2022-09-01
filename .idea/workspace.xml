@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a734d10-6967-4365-92ac-56e90abd1ea3" name="Changes" comment="legacy token now returns status 401">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/authentication/backends.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/authentication/backends.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/fight/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/fight/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/js/AxiosSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/js/AxiosSetting.js" afterDir="false" />
+    <list default="true" id="9a734d10-6967-4365-92ac-56e90abd1ea3" name="Changes" comment="changed status code with response after writing one step without created fight, and it's processing, and processing response 403">
+      <change beforePath="$PROJECT_DIR$/front/src/js/AxiosSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/AxiosSetting.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/pages/fight-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/fight-page.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/pages/index-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/index-page.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/pages/statistic-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/statistic-page.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +106,7 @@
       <workItem from="1661954899504" duration="5536000" />
       <workItem from="1661979924172" duration="342000" />
       <workItem from="1662044427873" duration="4527000" />
-      <workItem from="1662050660036" duration="1353000" />
+      <workItem from="1662050660036" duration="2008000" />
     </task>
     <task id="LOCAL-00001" summary="isort)">
       <created>1661631927634</created>
@@ -165,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662047841931</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="changed status code with response after writing one step without created fight, and it's processing, and processing response 403">
+      <created>1662052492146</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1662052492146</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +196,8 @@
     <MESSAGE value="rename methods, moving directory js and fix statistic" />
     <MESSAGE value="это тестовая ерунда)" />
     <MESSAGE value="legacy token now returns status 401" />
-    <option name="LAST_COMMIT_MESSAGE" value="legacy token now returns status 401" />
+    <MESSAGE value="changed status code with response after writing one step without created fight, and it's processing, and processing response 403" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed status code with response after writing one step without created fight, and it's processing, and processing response 403" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/hitman$backends.coverage" NAME="backends Coverage Results" MODIFIED="1662044439221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/authentication" />
