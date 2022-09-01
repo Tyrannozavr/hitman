@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a734d10-6967-4365-92ac-56e90abd1ea3" name="Changes" comment="rename methods, moving directory js and fix statistic">
+    <list default="true" id="9a734d10-6967-4365-92ac-56e90abd1ea3" name="Changes" comment="это тестовая ерунда)">
       <change beforePath="$PROJECT_DIR$/.idea/hitman.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hitman.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/authentication/backends.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/authentication/backends.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/authentication/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/authentication/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/fight/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/fight/permissions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/fight/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/fight/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/js/AxiosSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/js/AxiosSetting.js" afterDir="false" />
@@ -31,24 +30,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/dmiv/PycharmProjects/hitman&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.django.DjangoModulesConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/dmiv/PycharmProjects/hitman/front/src/main.js",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.django.DjangoModulesConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/front/src" />
     </key>
+  </component>
+  <component name="RunManager" selected="Django Server.hitman_backend">
+    <configuration name="main.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="src/main.js" working-dir="$PROJECT_DIR$/front">
+      <method v="2" />
+    </configuration>
+    <configuration name="hitman_backend" type="Python.DjangoServer" factoryName="Django server">
+      <module name="hitman" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="backend.settings" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/backend/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django Server.hitman_backend" />
+      <item itemvalue="Node.js.main.js" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -64,6 +106,8 @@
       <workItem from="1661843072286" duration="14149000" />
       <workItem from="1661867517225" duration="1325000" />
       <workItem from="1661954899504" duration="5536000" />
+      <workItem from="1661979924172" duration="342000" />
+      <workItem from="1662044427873" duration="3250000" />
     </task>
     <task id="LOCAL-00001" summary="isort)">
       <created>1661631927634</created>
@@ -107,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661868498642</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="это тестовая ерунда)">
+      <created>1661979943827</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661979943827</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,9 +181,10 @@
     <MESSAGE value="deleted comments and some change in auto-unsert token" />
     <MESSAGE value="add updating token after expiration" />
     <MESSAGE value="rename methods, moving directory js and fix statistic" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename methods, moving directory js and fix statistic" />
+    <MESSAGE value="это тестовая ерунда)" />
+    <option name="LAST_COMMIT_MESSAGE" value="это тестовая ерунда)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/hitman$backends.coverage" NAME="backends Coverage Results" MODIFIED="1661978703629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/authentication" />
+    <SUITE FILE_PATH="coverage/hitman$backends.coverage" NAME="backends Coverage Results" MODIFIED="1662044439221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/authentication" />
   </component>
 </project>

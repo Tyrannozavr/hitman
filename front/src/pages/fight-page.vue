@@ -72,7 +72,7 @@ export default {
                 alert('Please wait for your opponent\'s turn')
               } else {
                 console.log(err);
-                alert('Some error has occurred')
+                // alert('Some error has occurred')
               }
             })
       }

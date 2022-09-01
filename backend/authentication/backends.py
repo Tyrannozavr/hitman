@@ -5,6 +5,13 @@ from rest_framework import authentication, exceptions
 
 from .models import User
 
+from rest_framework.exceptions import APIException
+
+class Token_is_deprecated(APIException):
+    status_code = 401
+    default_detail = 'you need to re-login.'
+    default_code = 'token is deprecated'
+
 
 class JWTAuthentication(authentication.BaseAuthentication):
     authentication_header_prefix = 'Token'
@@ -39,11 +46,11 @@ class JWTAuthentication(authentication.BaseAuthentication):
         try:
             payload = jwt.decode(token, settings.SECRET_KEY)
         except Exception:
+            print('token')
             msg = 'Authentication failed. Unable to decode token'
-            raise exceptions.NotAuthenticated(msg)
+            # raise exceptions.NotAuthenticated(msg)
+            raise Token_is_deprecated
 
-
-            # raise exceptions.AuthenticationFailed(msg, code=rest_framework.status.HTTP_401_UNAUTHORIZED)
 
         try:
             user = User.objects.get(pk=payload['id'])
