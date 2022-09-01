@@ -1,5 +1,3 @@
-import json
-
 from authentication.models import User
 from rest_framework import status, viewsets
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -75,7 +73,7 @@ class FightView(APIView):
         if not obj:
             return Response(data={
                 "detail": 'fight only one user'
-            }, status=status.HTTP_201_CREATED)
+            }, status=status.HTTP_200_OK)
         # return Response({'error': 'Token does not exist'}, status=status.HTTP_401_UNAUTHORIZED)
         return Response(data={
             'num_round': obj.num_round,

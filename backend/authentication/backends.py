@@ -46,9 +46,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
         try:
             payload = jwt.decode(token, settings.SECRET_KEY)
         except Exception:
-            print('token')
-            msg = 'Authentication failed. Unable to decode token'
-            # raise exceptions.NotAuthenticated(msg)
+            """return code status 401 if token is old"""
             raise Token_is_deprecated
 
 

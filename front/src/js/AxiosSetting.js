@@ -16,11 +16,9 @@ export default ({requiresAuth = false} = {}) => {
         return response
       },
       function (error) {
-          // console.log('error: ', error.response.status)
           if (error.response.status === 401) {
               alert('you need to re-login');
               sessionStorage.removeItem('token')
-              // console.log('you need re-login', error.response.status)
               window.location = './'
           }
         // console.log('error', error.message);
