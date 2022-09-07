@@ -36,7 +36,7 @@ export default {
     }
   },
   mounted () {
-    axiosInstance({requiresAuth: true}).get('fight/statistic')
+    axiosInstance().get('fight/statistic')
         .then(response => (
             this.rounds = response.data
         ))

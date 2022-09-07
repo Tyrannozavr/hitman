@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export default ({requiresAuth = false} = {}) => {
+export default () => {
   const options = {};
   options.baseURL = 'http://127.0.0.1:8000/';
   options.timeout = 1000;
-  if (requiresAuth && sessionStorage.getItem('token')) {
+  if (sessionStorage.getItem('token')) {
     options.headers = {'Authorization': `Token ${sessionStorage.getItem('token')}`}
   }
 

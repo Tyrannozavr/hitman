@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     login () {
-      return instance({requiresAuth: false}).post('api/users/login/', {
+      return instance().post('api/users/login/', {
         user: {
           username: this.username,
           password: this.password
