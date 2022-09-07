@@ -54,7 +54,7 @@ export default {
     }
   },
   methods: {
-    fight() {
+    async fight() {
       if (check_length(this.attack, 'атаки') && check_length(this.defend, 'защиты')) {
         axiosInstance().post('fight/', {
           attack: this.attack,

@@ -31,7 +31,7 @@ export default {
     }
   },
   methods: {
-    login () {
+    async login () {
       return instance().post('api/users/login/', {
         user: {
           username: this.username,
