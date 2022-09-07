@@ -19,6 +19,7 @@
 </template>
 <script>
 import instance from '@/utils/AxiosSetting';
+import router from "@/router";
 
 
 export default {
@@ -40,7 +41,7 @@ export default {
       )
           .then( function (response) {
             sessionStorage.setItem('token', response.data.user.token);
-            window.location = './fight'
+            router.push({name: 'fight'})
           })
           .catch( function (error) {
             alert('Неверные имя пользователя или пароль');

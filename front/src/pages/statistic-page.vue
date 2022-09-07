@@ -1,10 +1,7 @@
 <template>
 <div id="statistic">
-    <div v-if="rounds === null">
-        You must <a href="./">log in</a>
-    </div>
   <div>
-    <h1><a href="./fight">Fight</a></h1>
+    <h1><router-link :to="{name: 'fight'}">Fight</router-link></h1>
   </div>
   <ol>
     <li v-for="round in rounds" v-bind:key="round.id" style="text-align: center">

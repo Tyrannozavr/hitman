@@ -1,4 +1,5 @@
 import axios from "axios";
+import router from "@/router";
 
 export default () => {
   const options = {};
@@ -6,6 +7,8 @@ export default () => {
   options.timeout = 1000;
   if (sessionStorage.getItem('token')) {
     options.headers = {'Authorization': `Token ${sessionStorage.getItem('token')}`}
+  } else {
+      router.push({name: 'index'})
   }
 
   const axiosInstance = axios.create(options);

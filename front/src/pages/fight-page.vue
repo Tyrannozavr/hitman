@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3><a href="..">Log in</a></h3>
+    <h3><router-link :to="{name: 'index'}">Log in</router-link></h3>
     <img src="./images/chelovek.png" alt="chelovek" id="chel1">
     <form @submit.prevent="fight" class="form">
       <p>Выберите 3 элемента атаки</p>
@@ -25,7 +25,7 @@
       <br>
       <button type="submit" id="push">Fight</button>
     </form>
-    <h3><a href="./statistic">Statistic</a></h3>
+    <h3><router-link :to="{name: 'statistic'}">Statistic</router-link></h3>
   </div>
 </template>
 
