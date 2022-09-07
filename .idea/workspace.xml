@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a734d10-6967-4365-92ac-56e90abd1ea3" name="Changes" comment="change links and windows.location in function to router.push and router-link">
+    <list default="true" id="9a734d10-6967-4365-92ac-56e90abd1ea3" name="Changes" comment="save">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/pages/fight-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/fight-page.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/pages/index-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/index-page.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/pages/statistic-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/statistic-page.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +116,7 @@
       <workItem from="1662050660036" duration="2831000" />
       <workItem from="1662131694585" duration="744000" />
       <workItem from="1662376724891" duration="788000" />
-      <workItem from="1662563361942" duration="3961000" />
+      <workItem from="1662563361942" duration="6323000" />
     </task>
     <task id="LOCAL-00001" summary="isort)">
       <created>1661631927634</created>
@@ -201,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662566461769</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="save">
+      <created>1662571595063</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1662571595063</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +238,8 @@
     <MESSAGE value="rename directory js -&gt; utils and instance =&gt; axiosInstance" />
     <MESSAGE value="remote arg requreAuth in AxiosSetting" />
     <MESSAGE value="change links and windows.location in function to router.push and router-link" />
-    <option name="LAST_COMMIT_MESSAGE" value="change links and windows.location in function to router.push and router-link" />
+    <MESSAGE value="save" />
+    <option name="LAST_COMMIT_MESSAGE" value="save" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/hitman$backends.coverage" NAME="backends Coverage Results" MODIFIED="1662044439221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/authentication" />

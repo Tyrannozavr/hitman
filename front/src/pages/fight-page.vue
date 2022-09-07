@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h3><router-link :to="{name: 'index'}">Log in</router-link></h3>
+    <h3>
+      <router-link :to="{name: 'index'}">Log in</router-link>
+    </h3>
     <img src="./images/chelovek.png" alt="chelovek" id="chel1">
     <form @submit.prevent="fight" class="form">
       <p>Выберите 3 элемента атаки</p>
@@ -25,7 +27,9 @@
       <br>
       <button type="submit" id="push">Fight</button>
     </form>
-    <h3><router-link :to="{name: 'statistic'}">Statistic</router-link></h3>
+    <h3>
+      <router-link :to="{name: 'statistic'}">Statistic</router-link>
+    </h3>
   </div>
 </template>
 
@@ -56,24 +60,23 @@ export default {
   methods: {
     async fight() {
       if (check_length(this.attack, 'атаки') && check_length(this.defend, 'защиты')) {
-        axiosInstance().post('fight/', {
-          attack: this.attack,
-          defend: this.defend
-        })
-            .then( function(response) {
-              if (response.status === 200) {
-                alert('Your move is recorded, wait for another player\'s move')
-              } else {
-                alert('the battle is done, see the statistics')
-              }
-            })
-            .catch(function (err) {
-              if (err.response.status === 403) {
-                alert('Please wait for your opponent\'s turn')
-              } else {
-                console.log(err);
-              }
-            })
+        try {
+          const response = await axiosInstance().post('fight/', {
+            attack: this.attack,
+            defend: this.defend
+          })
+          if (response.status === 200) {
+            alert('Your move is recorded, wait for another player\'s move')
+          } else {
+            alert('the battle is done, see the statistic')
+          }
+        } catch (error) {
+          if (error.response.status === 403) {
+            alert('Please wait for your opponent\'s turn')
+          } else {
+            console.log(error);
+          }
+        }
       }
     }
   }
