@@ -92,3 +92,4 @@ export default {
 #push {
   width: 30%
 }
+</style>

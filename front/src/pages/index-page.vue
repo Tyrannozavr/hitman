@@ -20,9 +20,6 @@
 <script>
 import axiosInstance from "@/utils/AxiosSetting";
 
-import router from "@/router";
-
-
 export default {
   data: function () {
     return {
@@ -41,7 +38,7 @@ export default {
       })
       try {
         sessionStorage.setItem('token', response.data.user.token);
-        router.push({name: 'fight'})
+        this.$router.push({name: 'fight'})
       } catch (error) {
           alert('Неверные данные пользователя или пароль');
         console.log(error)

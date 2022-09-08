@@ -21,9 +21,8 @@ export default () => {
           if (error.response.status === 401) {
               alert('you need to re-login');
               sessionStorage.removeItem('token')
-              window.location = './'
+              this.$router.push('./')
           }
-        // console.log('error', error.message);
       return Promise.reject(error)
       }
   )
