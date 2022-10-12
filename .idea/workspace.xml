@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a734d10-6967-4365-92ac-56e90abd1ea3" name="Changes" comment="debug css in fight-page.vue and change windows.location to router.push in axiosSetting">
+    <list default="true" id="9a734d10-6967-4365-92ac-56e90abd1ea3" name="Changes" comment="change count &quot;__&quot; in statistic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/pages/fight-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/fight-page.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/pages/index-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/index-page.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/utils/AxiosSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/AxiosSetting.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -35,20 +35,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/dmiv/PycharmProjects/hitman/front/src/main.js&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.django.DjangoModulesConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/dmiv/PycharmProjects/new_test",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/front/src" />
@@ -117,7 +117,8 @@
       <workItem from="1662131694585" duration="744000" />
       <workItem from="1662376724891" duration="788000" />
       <workItem from="1662563361942" duration="6559000" />
-      <workItem from="1662664782038" duration="1762000" />
+      <workItem from="1662664782038" duration="2552000" />
+      <workItem from="1663182430960" duration="783000" />
     </task>
     <task id="LOCAL-00001" summary="isort)">
       <created>1661631927634</created>
@@ -224,7 +225,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662666540725</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="change count __ in statistic">
+      <created>1662666705920</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1662666705920</updated>
+    </task>
+    <task id="LOCAL-00017" summary="change count &quot;__&quot; in statistic">
+      <created>1662666724752</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1662666724752</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +271,9 @@
     <MESSAGE value="save" />
     <MESSAGE value="added in methods async execution" />
     <MESSAGE value="debug css in fight-page.vue and change windows.location to router.push in axiosSetting" />
-    <option name="LAST_COMMIT_MESSAGE" value="debug css in fight-page.vue and change windows.location to router.push in axiosSetting" />
+    <MESSAGE value="change count __ in statistic" />
+    <MESSAGE value="change count &quot;__&quot; in statistic" />
+    <option name="LAST_COMMIT_MESSAGE" value="change count &quot;__&quot; in statistic" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/hitman$backends.coverage" NAME="backends Coverage Results" MODIFIED="1662044439221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/authentication" />
