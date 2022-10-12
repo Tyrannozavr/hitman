@@ -10,7 +10,14 @@ This is index html
 {#{{ data }}#}
 {% for teck in data %}
     <div>
-    Name: {{ teck.name }} Age: {{ teck.age }}
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name: </label>
+        <input name="name" id='name' type="text" value="{{ teck.name }}"/>
+        <label for="age" >Age: </label>
+        <input name="age" id='age' type="number" value="{{ teck.age }}"/>
+        <button type="submit" value="input">Submit</button>
+    </form>
     </div>
 {% endfor %}
 </body>
